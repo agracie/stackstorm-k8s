@@ -205,6 +205,14 @@ Reduce duplication of the st2.*.conf volume details
           echo 'Waiting for MongoDB Connection...'
           sleep 2;
       done
+  resources:
+    requests:
+        requests:
+        memory: "25Mi"
+        cpu: "50m"
+      limits:
+        memory: "25Mi"
+        cpu: "50m"
   {{- with .Values.securityContext }}
   securityContext: {{- toYaml . | nindent 8 }}
   {{- end }}
@@ -225,6 +233,14 @@ Reduce duplication of the st2.*.conf volume details
           echo 'Waiting for RabbitMQ Connection...'
           sleep 2;
       done
+  resources:
+    requests:
+        requests:
+        memory: "25Mi"
+        cpu: "50m"
+      limits:
+        memory: "25Mi"
+        cpu: "50m"
   {{- with .Values.securityContext }}
   securityContext: {{- toYaml . | nindent 8 }}
   {{- end }}
@@ -344,6 +360,13 @@ Merge packs and virtualenvs from st2 with those from st2packs images
     - |
       /bin/cp -aR /opt/stackstorm/packs/. /opt/stackstorm/packs-shared &&
       /bin/cp -aR /opt/stackstorm/virtualenvs/. /opt/stackstorm/virtualenvs-shared
+  resources:
+      requests:
+      memory: "25Mi"
+      cpu: "50m"
+    limits:
+      memory: "25Mi"
+      cpu: "50m"
   {{- with $.Values.securityContext }}
   securityContext: {{- toYaml . | nindent 8 }}
   {{- end }}
