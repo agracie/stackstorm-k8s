@@ -1,9 +1,173 @@
 apiVersion: v1
 entries:
+  external-dns:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 0.7.4
+    created: "2023-07-20T17:12:01.753882-04:00"
+    description: ExternalDNS is a Kubernetes addon that configures public DNS servers
+      with information about exposed Kubernetes services to make them discoverable.
+    digest: cc47466275e55101d7c26caea4fafb6b942cc4d2e040b533ccffdcd2aef79942
+    home: https://github.com/bitnami/charts/tree/master/bitnami/external-dns
+    icon: https://bitnami.com/assets/stacks/external-dns/img/external-dns-stack-110x117.png
+    keywords:
+    - external-dns
+    - network
+    - dns
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: external-dns
+    sources:
+    - https://github.com/kubernetes-sigs/external-dns
+    - https://github.com/bitnami/bitnami-docker-external-dns
+    - https://github.com/kubernetes-sigs/external-dns
+    urls:
+    - charts/external-dns-4.0.0.tgz
+    version: 4.0.0
+  mongodb:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 4.4.1
+    created: "2023-07-20T17:12:01.756732-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: NoSQL document-oriented database that stores JSON-like documents
+      with dynamic schemas, simplifying the integration of data in content-driven
+      applications.
+    digest: 22042b43345f6a152862141c03d57fe4424134d17b952e1502c9e749108ab3c3
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mongodb
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mongodb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mongodb
+    - https://mongodb.org
+    urls:
+    - charts/mongodb-10.0.1.tgz
+    version: 10.0.1
+  rabbitmq:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 3.8.9
+    created: "2023-07-20T17:12:01.758847-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Open source message broker software that implements the Advanced
+      Message Queuing Protocol (AMQP)
+    digest: eaa4a3956031da0e27c3a850020724432faffd8f0e6ae0d3870a38c00bda2fdd
+    home: https://github.com/bitnami/charts/tree/master/bitnami/rabbitmq
+    icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
+    keywords:
+    - rabbitmq
+    - message queue
+    - AMQP
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: rabbitmq
+    sources:
+    - https://github.com/bitnami/bitnami-docker-rabbitmq
+    - https://www.rabbitmq.com
+    urls:
+    - charts/rabbitmq-8.0.2.tgz
+    version: 8.0.2
+  redis:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 6.0.9
+    created: "2023-07-20T17:12:01.761233-04:00"
+    description: Open source, advanced key-value store. It is often referred to as
+      a data structure server since keys can contain strings, hashes, lists, sets
+      and sorted sets.
+    digest: 86cc2031623f34a0819ac06772b6dbe2eaa622c15b5721d7622dcaadfa083414
+    home: https://github.com/bitnami/charts/tree/master/bitnami/redis
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    name: redis
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redis
+    - http://redis.io/
+    urls:
+    - charts/redis-12.3.2.tgz
+    version: 12.3.2
   stackstorm-ha:
   - apiVersion: v2
     appVersion: "3.8"
-    created: "2023-01-28T15:46:52.986981681-06:00"
+    created: "2023-07-20T17:12:01.530215-04:00"
+    dependencies:
+    - condition: rabbitmq.enabled
+      name: rabbitmq
+      repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+      version: 8.0.2
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+      version: 10.0.1
+    - condition: external-dns.enabled
+      name: external-dns
+      repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+      version: 4.0.0
+    - condition: redis.enabled
+      name: redis
+      repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+      version: 12.3.2
+    description: StackStorm K8s Helm Chart, optimized for running StackStorm in HA
+      environment.
+    digest: 47491abb1dce366dfe692f255a73fb641c004cc35a7b7fd20caa2458fe457d56
+    home: https://stackstorm.com/
+    icon: https://landscape.cncf.io/logos/stack-storm.svg
+    keywords:
+    - st2
+    - stackstorm
+    - devops
+    - SRE
+    - automation
+    - chatops
+    - event-driven
+    - auto-remediation
+    - IFTTT
+    - HA
+    maintainers:
+    - email: armab@stackstorm.com
+      name: Eugen Cusmaunsa
+      url: https://github.com/armab
+    name: stackstorm-ha
+    urls:
+    - stackstorm-ha-0.110.1.tgz
+    version: 0.110.1
+  - apiVersion: v2
+    appVersion: "3.8"
+    created: "2023-07-20T17:12:01.514425-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -47,7 +211,7 @@ entries:
     version: 0.110.0
   - apiVersion: v2
     appVersion: "3.7"
-    created: "2022-05-19T15:12:39.330442557-05:00"
+    created: "2023-07-20T17:12:01.489701-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -91,7 +255,7 @@ entries:
     version: 0.100.0
   - apiVersion: v2
     appVersion: "3.6"
-    created: "2022-04-01T12:38:47.590044096-05:00"
+    created: "2023-07-20T17:12:01.752349-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -135,7 +299,7 @@ entries:
     version: 0.90.0
   - apiVersion: v2
     appVersion: "3.6"
-    created: "2021-12-20T19:06:53.017521578-06:00"
+    created: "2023-07-20T17:12:01.73456-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -179,7 +343,7 @@ entries:
     version: 0.80.0
   - apiVersion: v2
     appVersion: "3.5"
-    created: "2021-09-11T14:12:32.868353137-05:00"
+    created: "2023-07-20T17:12:01.703497-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -197,7 +361,8 @@ entries:
       name: redis
       repository: https://charts.bitnami.com/bitnami
       version: 12.3.2
-    description: StackStorm K8s Helm Chart, optimized for running StackStorm in HA environment.
+    description: StackStorm K8s Helm Chart, optimized for running StackStorm in HA
+      environment.
     digest: 4ca4c477581394f5dbe75f51f026d27f5cfccf8804755ad5bdc5a23b98ef5e54
     home: https://stackstorm.com/
     icon: https://landscape.cncf.io/logos/stack-storm.svg
@@ -222,7 +387,7 @@ entries:
     version: 0.70.0
   - apiVersion: v2
     appVersion: 3.5dev
-    created: "2021-03-30T13:25:01.766348293+01:00"
+    created: "2023-07-20T17:12:01.685787-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -266,7 +431,7 @@ entries:
     version: 0.60.0
   - apiVersion: v2
     appVersion: 3.4dev
-    created: "2021-02-17T20:35:49.570335189Z"
+    created: "2023-07-20T17:12:01.671845-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -310,7 +475,7 @@ entries:
     version: 0.52.0
   - apiVersion: v2
     appVersion: 3.4dev
-    created: "2020-12-29T19:37:23.834879839Z"
+    created: "2023-07-20T17:12:01.661756-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -354,7 +519,7 @@ entries:
     version: 0.51.0
   - apiVersion: v2
     appVersion: 3.4dev
-    created: "2021-01-22T17:51:01.700524768Z"
+    created: "2023-07-20T17:12:01.65168-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -398,7 +563,7 @@ entries:
     version: 0.50.0
   - apiVersion: v1
     appVersion: 3.4dev
-    created: "2020-12-27T20:05:48.459819241Z"
+    created: "2023-07-20T17:12:01.642662-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -443,7 +608,7 @@ entries:
     version: 0.41.0
   - apiVersion: v1
     appVersion: 3.4dev
-    created: "2020-12-27T20:05:48.455648156Z"
+    created: "2023-07-20T17:12:01.637015-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -488,7 +653,7 @@ entries:
     version: 0.40.0
   - apiVersion: v1
     appVersion: 3.3dev
-    created: "2020-12-27T20:05:48.451283236Z"
+    created: "2023-07-20T17:12:01.632103-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -532,7 +697,7 @@ entries:
     version: 0.32.0
   - apiVersion: v1
     appVersion: 3.3dev
-    created: "2020-12-27T20:05:48.44652952Z"
+    created: "2023-07-20T17:12:01.627284-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -576,7 +741,7 @@ entries:
     version: 0.31.0
   - apiVersion: v1
     appVersion: 3.3dev
-    created: "2020-12-27T20:05:48.442198145Z"
+    created: "2023-07-20T17:12:01.621926-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -620,7 +785,7 @@ entries:
     version: 0.30.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2020-12-27T20:05:48.434565534Z"
+    created: "2023-07-20T17:12:01.61642-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -664,7 +829,7 @@ entries:
     version: 0.28.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2020-12-27T20:05:48.430351616Z"
+    created: "2023-07-20T17:12:01.611946-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -708,7 +873,7 @@ entries:
     version: 0.27.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2020-12-27T20:05:48.426055155Z"
+    created: "2023-07-20T17:12:01.606851-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -751,7 +916,7 @@ entries:
     version: 0.26.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2020-12-27T20:05:48.421195504Z"
+    created: "2023-07-20T17:12:01.602383-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -794,7 +959,7 @@ entries:
     version: 0.25.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2020-12-27T20:05:48.416873577Z"
+    created: "2023-07-20T17:12:01.597625-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -837,7 +1002,7 @@ entries:
     version: 0.24.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2020-12-27T20:05:48.412273523Z"
+    created: "2023-07-20T17:12:01.592167-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -880,7 +1045,7 @@ entries:
     version: 0.23.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2020-12-27T20:05:48.406327361Z"
+    created: "2023-07-20T17:12:01.587747-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -923,7 +1088,7 @@ entries:
     version: 0.22.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2020-12-27T20:05:48.402534288Z"
+    created: "2023-07-20T17:12:01.582694-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -974,7 +1139,7 @@ entries:
     version: 0.21.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2020-12-27T20:05:48.398352379Z"
+    created: "2023-07-20T17:12:01.577692-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -1025,7 +1190,7 @@ entries:
     version: 0.20.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2020-12-27T20:05:48.393989946Z"
+    created: "2023-07-20T17:12:01.572284-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1074,7 +1239,7 @@ entries:
     version: 0.19.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2020-12-27T20:05:48.389997847Z"
+    created: "2023-07-20T17:12:01.567737-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1123,7 +1288,7 @@ entries:
     version: 0.18.0
   - apiVersion: v1
     appVersion: 3.1dev
-    created: "2020-12-27T20:05:48.383267422Z"
+    created: "2023-07-20T17:12:01.562443-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1172,7 +1337,7 @@ entries:
     version: 0.17.0
   - apiVersion: v1
     appVersion: 3.1dev
-    created: "2020-12-27T20:05:48.379235699Z"
+    created: "2023-07-20T17:12:01.557933-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1221,7 +1386,7 @@ entries:
     version: 0.16.0
   - apiVersion: v1
     appVersion: 3.1dev
-    created: "2020-12-27T20:05:48.374452838Z"
+    created: "2023-07-20T17:12:01.553032-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1270,7 +1435,7 @@ entries:
     version: 0.15.0
   - apiVersion: v1
     appVersion: 3.1dev
-    created: "2020-12-27T20:05:48.370188846Z"
+    created: "2023-07-20T17:12:01.548124-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1319,7 +1484,7 @@ entries:
     version: 0.14.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2020-12-27T20:05:48.365867141Z"
+    created: "2023-07-20T17:12:01.541852-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1368,7 +1533,7 @@ entries:
     version: 0.13.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2020-12-27T20:05:48.360496675Z"
+    created: "2023-07-20T17:12:01.536461-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1417,7 +1582,7 @@ entries:
     version: 0.12.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2020-12-27T20:05:48.356356631Z"
+    created: "2023-07-20T17:12:01.498555-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1466,7 +1631,7 @@ entries:
     version: 0.11.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2020-12-27T20:05:48.350797664Z"
+    created: "2023-07-20T17:12:01.468915-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1514,7 +1679,7 @@ entries:
     version: 0.10.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2020-12-27T20:05:48.494079622Z"
+    created: "2023-07-20T17:12:01.738734-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1559,7 +1724,7 @@ entries:
     version: 0.9.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2020-12-27T20:05:48.490751825Z"
+    created: "2023-07-20T17:12:01.723578-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1604,7 +1769,7 @@ entries:
     version: 0.8.4
   - apiVersion: v1
     appVersion: 2.10dev
-    created: "2020-12-27T20:05:48.48742681Z"
+    created: "2023-07-20T17:12:01.719024-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1649,7 +1814,7 @@ entries:
     version: 0.8.3
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2020-12-27T20:05:48.482712706Z"
+    created: "2023-07-20T17:12:01.715441-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1694,7 +1859,7 @@ entries:
     version: 0.8.2
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2020-12-27T20:05:48.479365676Z"
+    created: "2023-07-20T17:12:01.71098-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1739,7 +1904,7 @@ entries:
     version: 0.8.1
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2020-12-27T20:05:48.476095875Z"
+    created: "2023-07-20T17:12:01.707129-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1784,7 +1949,7 @@ entries:
     version: 0.8.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2020-12-27T20:05:48.471427439Z"
+    created: "2023-07-20T17:12:01.692843-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1825,7 +1990,7 @@ entries:
     version: 0.7.1
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2020-12-27T20:05:48.467007017Z"
+    created: "2023-07-20T17:12:01.689046-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1866,7 +2031,7 @@ entries:
     version: 0.7.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2020-12-27T20:05:48.463639067Z"
+    created: "2023-07-20T17:12:01.675108-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1905,4 +2070,4 @@ entries:
     urls:
     - stackstorm-ha-0.6.0.tgz
     version: 0.6.0
-generated: "2022-05-19T15:12:39.298736295-05:00"
+generated: "2023-07-20T17:12:01.463162-04:00"
