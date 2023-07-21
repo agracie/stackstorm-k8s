@@ -5,7 +5,7 @@ entries:
       category: DeveloperTools
     apiVersion: v2
     appVersion: 0.7.4
-    created: "2023-07-20T17:49:25.821623-04:00"
+    created: "2023-07-20T23:04:19.757773-04:00"
     description: ExternalDNS is a Kubernetes addon that configures public DNS servers
       with information about exposed Kubernetes services to make them discoverable.
     digest: cc47466275e55101d7c26caea4fafb6b942cc4d2e040b533ccffdcd2aef79942
@@ -24,14 +24,14 @@ entries:
     - https://github.com/bitnami/bitnami-docker-external-dns
     - https://github.com/kubernetes-sigs/external-dns
     urls:
-    - https://agracie.github.io/stackstorm-k8s/charts/external-dns-4.0.0.tgz
+    - charts/external-dns-4.0.0.tgz
     version: 4.0.0
   mongodb:
   - annotations:
       category: Database
     apiVersion: v2
     appVersion: 4.4.1
-    created: "2023-07-20T17:49:25.824741-04:00"
+    created: "2023-07-20T23:04:19.760905-04:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -59,14 +59,14 @@ entries:
     - https://github.com/bitnami/bitnami-docker-mongodb
     - https://mongodb.org
     urls:
-    - https://agracie.github.io/stackstorm-k8s/charts/mongodb-10.0.1.tgz
+    - charts/mongodb-10.0.1.tgz
     version: 10.0.1
   rabbitmq:
   - annotations:
       category: Infrastructure
     apiVersion: v2
     appVersion: 3.8.9
-    created: "2023-07-20T17:49:25.827236-04:00"
+    created: "2023-07-20T23:04:19.763861-04:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -90,14 +90,14 @@ entries:
     - https://github.com/bitnami/bitnami-docker-rabbitmq
     - https://www.rabbitmq.com
     urls:
-    - https://agracie.github.io/stackstorm-k8s/charts/rabbitmq-8.0.2.tgz
+    - charts/rabbitmq-8.0.2.tgz
     version: 8.0.2
   redis:
   - annotations:
       category: Database
     apiVersion: v2
     appVersion: 6.0.9
-    created: "2023-07-20T17:49:25.830615-04:00"
+    created: "2023-07-20T23:04:19.767042-04:00"
     description: Open source, advanced key-value store. It is often referred to as
       a data structure server since keys can contain strings, hashes, lists, sets
       and sorted sets.
@@ -118,12 +118,12 @@ entries:
     - https://github.com/bitnami/bitnami-docker-redis
     - http://redis.io/
     urls:
-    - https://agracie.github.io/stackstorm-k8s/charts/redis-12.3.2.tgz
+    - charts/redis-12.3.2.tgz
     version: 12.3.2
   stackstorm-ha:
   - apiVersion: v2
     appVersion: "3.8"
-    created: "2023-07-20T17:49:25.594148-04:00"
+    created: "2023-07-20T23:04:19.516811-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -163,11 +163,11 @@ entries:
       url: https://github.com/armab
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.110.1.tgz
+    - stackstorm-ha-0.110.1.tgz
     version: 0.110.1
   - apiVersion: v2
     appVersion: "3.8"
-    created: "2023-07-20T17:49:25.580949-04:00"
+    created: "2023-07-20T23:04:19.50305-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -207,11 +207,11 @@ entries:
       url: https://github.com/armab
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.110.0.tgz
+    - stackstorm-ha-0.110.0.tgz
     version: 0.110.0
   - apiVersion: v2
     appVersion: "3.7"
-    created: "2023-07-20T17:49:25.562531-04:00"
+    created: "2023-07-20T23:04:19.481694-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -251,11 +251,11 @@ entries:
       url: https://github.com/armab
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.100.0.tgz
+    - stackstorm-ha-0.100.0.tgz
     version: 0.100.0
   - apiVersion: v2
     appVersion: "3.6"
-    created: "2023-07-20T17:49:25.818844-04:00"
+    created: "2023-07-20T23:04:19.754856-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -295,11 +295,11 @@ entries:
       url: https://github.com/armab
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.90.0.tgz
+    - stackstorm-ha-0.90.0.tgz
     version: 0.90.0
   - apiVersion: v2
     appVersion: "3.6"
-    created: "2023-07-20T17:49:25.799609-04:00"
+    created: "2023-07-20T23:04:19.73609-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -339,11 +339,11 @@ entries:
       url: https://github.com/armab
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.80.0.tgz
+    - stackstorm-ha-0.80.0.tgz
     version: 0.80.0
   - apiVersion: v2
     appVersion: "3.5"
-    created: "2023-07-20T17:49:25.767732-04:00"
+    created: "2023-07-20T23:04:19.702334-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -383,11 +383,11 @@ entries:
       url: https://github.com/armab
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.70.0.tgz
+    - stackstorm-ha-0.70.0.tgz
     version: 0.70.0
   - apiVersion: v2
     appVersion: 3.5dev
-    created: "2023-07-20T17:49:25.750373-04:00"
+    created: "2023-07-20T23:04:19.682705-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -427,11 +427,11 @@ entries:
       url: https://github.com/armab
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.60.0.tgz
+    - stackstorm-ha-0.60.0.tgz
     version: 0.60.0
   - apiVersion: v2
     appVersion: 3.4dev
-    created: "2023-07-20T17:49:25.736626-04:00"
+    created: "2023-07-20T23:04:19.667202-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -471,11 +471,11 @@ entries:
       url: https://github.com/armab
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.52.0.tgz
+    - stackstorm-ha-0.52.0.tgz
     version: 0.52.0
   - apiVersion: v2
     appVersion: 3.4dev
-    created: "2023-07-20T17:49:25.725645-04:00"
+    created: "2023-07-20T23:04:19.656183-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -515,11 +515,11 @@ entries:
       url: https://github.com/armab
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.51.0.tgz
+    - stackstorm-ha-0.51.0.tgz
     version: 0.51.0
   - apiVersion: v2
     appVersion: 3.4dev
-    created: "2023-07-20T17:49:25.715263-04:00"
+    created: "2023-07-20T23:04:19.645572-04:00"
     dependencies:
     - condition: rabbitmq.enabled
       name: rabbitmq
@@ -559,11 +559,11 @@ entries:
       url: https://github.com/armab
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.50.0.tgz
+    - stackstorm-ha-0.50.0.tgz
     version: 0.50.0
   - apiVersion: v1
     appVersion: 3.4dev
-    created: "2023-07-20T17:49:25.706217-04:00"
+    created: "2023-07-20T23:04:19.636284-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -604,11 +604,11 @@ entries:
       url: https://github.com/armab
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.41.0.tgz
+    - stackstorm-ha-0.41.0.tgz
     version: 0.41.0
   - apiVersion: v1
     appVersion: 3.4dev
-    created: "2023-07-20T17:49:25.701106-04:00"
+    created: "2023-07-20T23:04:19.630923-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -649,11 +649,11 @@ entries:
       url: https://github.com/armab
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.40.0.tgz
+    - stackstorm-ha-0.40.0.tgz
     version: 0.40.0
   - apiVersion: v1
     appVersion: 3.3dev
-    created: "2023-07-20T17:49:25.695548-04:00"
+    created: "2023-07-20T23:04:19.62507-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -693,11 +693,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.32.0.tgz
+    - stackstorm-ha-0.32.0.tgz
     version: 0.32.0
   - apiVersion: v1
     appVersion: 3.3dev
-    created: "2023-07-20T17:49:25.69039-04:00"
+    created: "2023-07-20T23:04:19.619531-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -737,11 +737,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.31.0.tgz
+    - stackstorm-ha-0.31.0.tgz
     version: 0.31.0
   - apiVersion: v1
     appVersion: 3.3dev
-    created: "2023-07-20T17:49:25.684971-04:00"
+    created: "2023-07-20T23:04:19.614224-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -781,11 +781,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.30.0.tgz
+    - stackstorm-ha-0.30.0.tgz
     version: 0.30.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2023-07-20T17:49:25.679504-04:00"
+    created: "2023-07-20T23:04:19.608289-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -825,11 +825,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.28.0.tgz
+    - stackstorm-ha-0.28.0.tgz
     version: 0.28.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2023-07-20T17:49:25.674768-04:00"
+    created: "2023-07-20T23:04:19.60331-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -869,11 +869,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.27.0.tgz
+    - stackstorm-ha-0.27.0.tgz
     version: 0.27.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2023-07-20T17:49:25.669924-04:00"
+    created: "2023-07-20T23:04:19.5982-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -912,11 +912,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.26.0.tgz
+    - stackstorm-ha-0.26.0.tgz
     version: 0.26.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2023-07-20T17:49:25.664083-04:00"
+    created: "2023-07-20T23:04:19.592206-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -955,11 +955,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.25.0.tgz
+    - stackstorm-ha-0.25.0.tgz
     version: 0.25.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2023-07-20T17:49:25.659679-04:00"
+    created: "2023-07-20T23:04:19.586399-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -998,11 +998,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.24.0.tgz
+    - stackstorm-ha-0.24.0.tgz
     version: 0.24.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2023-07-20T17:49:25.654649-04:00"
+    created: "2023-07-20T23:04:19.581313-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -1041,11 +1041,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.23.0.tgz
+    - stackstorm-ha-0.23.0.tgz
     version: 0.23.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2023-07-20T17:49:25.650215-04:00"
+    created: "2023-07-20T23:04:19.575801-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -1084,11 +1084,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.22.0.tgz
+    - stackstorm-ha-0.22.0.tgz
     version: 0.22.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2023-07-20T17:49:25.644601-04:00"
+    created: "2023-07-20T23:04:19.57093-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -1135,11 +1135,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.21.0.tgz
+    - stackstorm-ha-0.21.0.tgz
     version: 0.21.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2023-07-20T17:49:25.639654-04:00"
+    created: "2023-07-20T23:04:19.565722-04:00"
     dependencies:
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
@@ -1186,11 +1186,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.20.0.tgz
+    - stackstorm-ha-0.20.0.tgz
     version: 0.20.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2023-07-20T17:49:25.634325-04:00"
+    created: "2023-07-20T23:04:19.560187-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1235,11 +1235,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.19.0.tgz
+    - stackstorm-ha-0.19.0.tgz
     version: 0.19.0
   - apiVersion: v1
     appVersion: 3.2dev
-    created: "2023-07-20T17:49:25.629353-04:00"
+    created: "2023-07-20T23:04:19.555057-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1284,11 +1284,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.18.0.tgz
+    - stackstorm-ha-0.18.0.tgz
     version: 0.18.0
   - apiVersion: v1
     appVersion: 3.1dev
-    created: "2023-07-20T17:49:25.623914-04:00"
+    created: "2023-07-20T23:04:19.549426-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1333,11 +1333,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.17.0.tgz
+    - stackstorm-ha-0.17.0.tgz
     version: 0.17.0
   - apiVersion: v1
     appVersion: 3.1dev
-    created: "2023-07-20T17:49:25.619191-04:00"
+    created: "2023-07-20T23:04:19.544432-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1382,11 +1382,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.16.0.tgz
+    - stackstorm-ha-0.16.0.tgz
     version: 0.16.0
   - apiVersion: v1
     appVersion: 3.1dev
-    created: "2023-07-20T17:49:25.614816-04:00"
+    created: "2023-07-20T23:04:19.538896-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1431,11 +1431,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.15.0.tgz
+    - stackstorm-ha-0.15.0.tgz
     version: 0.15.0
   - apiVersion: v1
     appVersion: 3.1dev
-    created: "2023-07-20T17:49:25.609269-04:00"
+    created: "2023-07-20T23:04:19.533756-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1480,11 +1480,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.14.0.tgz
+    - stackstorm-ha-0.14.0.tgz
     version: 0.14.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2023-07-20T17:49:25.603783-04:00"
+    created: "2023-07-20T23:04:19.52801-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1529,11 +1529,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.13.0.tgz
+    - stackstorm-ha-0.13.0.tgz
     version: 0.13.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2023-07-20T17:49:25.598753-04:00"
+    created: "2023-07-20T23:04:19.523026-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1578,11 +1578,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.12.0.tgz
+    - stackstorm-ha-0.12.0.tgz
     version: 0.12.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2023-07-20T17:49:25.568756-04:00"
+    created: "2023-07-20T23:04:19.487365-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1627,11 +1627,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.11.0.tgz
+    - stackstorm-ha-0.11.0.tgz
     version: 0.11.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2023-07-20T17:49:25.546948-04:00"
+    created: "2023-07-20T23:04:19.465148-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1675,11 +1675,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.10.0.tgz
+    - stackstorm-ha-0.10.0.tgz
     version: 0.10.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2023-07-20T17:49:25.803966-04:00"
+    created: "2023-07-20T23:04:19.740748-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1720,11 +1720,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.9.0.tgz
+    - stackstorm-ha-0.9.0.tgz
     version: 0.9.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2023-07-20T17:49:25.787583-04:00"
+    created: "2023-07-20T23:04:19.724364-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1765,11 +1765,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.8.4.tgz
+    - stackstorm-ha-0.8.4.tgz
     version: 0.8.4
   - apiVersion: v1
     appVersion: 2.10dev
-    created: "2023-07-20T17:49:25.783639-04:00"
+    created: "2023-07-20T23:04:19.720309-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1810,11 +1810,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.8.3.tgz
+    - stackstorm-ha-0.8.3.tgz
     version: 0.8.3
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2023-07-20T17:49:25.779721-04:00"
+    created: "2023-07-20T23:04:19.716144-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1855,11 +1855,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.8.2.tgz
+    - stackstorm-ha-0.8.2.tgz
     version: 0.8.2
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2023-07-20T17:49:25.775305-04:00"
+    created: "2023-07-20T23:04:19.711208-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1900,11 +1900,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.8.1.tgz
+    - stackstorm-ha-0.8.1.tgz
     version: 0.8.1
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2023-07-20T17:49:25.771416-04:00"
+    created: "2023-07-20T23:04:19.706728-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1945,11 +1945,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.8.0.tgz
+    - stackstorm-ha-0.8.0.tgz
     version: 0.8.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2023-07-20T17:49:25.756757-04:00"
+    created: "2023-07-20T23:04:19.690459-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -1986,11 +1986,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.7.1.tgz
+    - stackstorm-ha-0.7.1.tgz
     version: 0.7.1
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2023-07-20T17:49:25.753572-04:00"
+    created: "2023-07-20T23:04:19.686857-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -2027,11 +2027,11 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.7.0.tgz
+    - stackstorm-ha-0.7.0.tgz
     version: 0.7.0
   - apiVersion: v1
     appVersion: 3.0dev
-    created: "2023-07-20T17:49:25.73984-04:00"
+    created: "2023-07-20T23:04:19.671969-04:00"
     dependencies:
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -2068,6 +2068,6 @@ entries:
       url: https://github.com/warrenvw
     name: stackstorm-ha
     urls:
-    - https://agracie.github.io/stackstorm-k8s/stackstorm-ha-0.6.0.tgz
+    - stackstorm-ha-0.6.0.tgz
     version: 0.6.0
-generated: "2023-07-20T17:49:25.540386-04:00"
+generated: "2023-07-20T23:04:19.459083-04:00"
